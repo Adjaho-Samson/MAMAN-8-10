@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
         clearInterval(timer);
         countdown.textContent = "♥";
         countdown.style.color = "#c66c89";
-        surpriseText.textContent = "Maman, regarde derrière toi.";
+        surpriseText.textContent = "Joyeux anniversaire Maman. Nous t'aimons très fort.";
         createConfetti();
       }
     }, 900);
