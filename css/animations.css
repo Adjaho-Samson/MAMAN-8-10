@@ -1,0 +1,354 @@
+/* ===== REVEAL ANIMATIONS ===== */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Staggered reveals */
+.timeline-item:nth-child(1).reveal.visible {
+  transition-delay: 0.1s;
+}
+.timeline-item:nth-child(2).reveal.visible {
+  transition-delay: 0.2s;
+}
+.timeline-item:nth-child(3).reveal.visible {
+  transition-delay: 0.3s;
+}
+.timeline-item:nth-child(4).reveal.visible {
+  transition-delay: 0.4s;
+}
+
+.message-card:nth-child(1).reveal.visible {
+  transition-delay: 0.1s;
+}
+.message-card:nth-child(2).reveal.visible {
+  transition-delay: 0.2s;
+}
+.message-card:nth-child(3).reveal.visible {
+  transition-delay: 0.3s;
+}
+
+/* ===== INTRO ANIMATIONS ===== */
+.intro-content {
+  animation: popIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ===== SCROLL HINT ===== */
+.scroll-hint {
+  animation: bounce 2.5s ease-in-out infinite !important;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(15px);
+  }
+}
+
+/* ===== FLOAT ANIMATION ===== */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* ===== PULSE ANIMATION ===== */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===== ZOOM IN ===== */
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== SLIDE IN ===== */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== SHIMMER EFFECT ===== */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* ===== GLOW ANIMATION ===== */
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(142, 47, 79, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(142, 47, 79, 0.75);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal,
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ===== ROTATE ===== */
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== FADE IN ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ===== PARALLAX SCROLL ===== */
+.parallax {
+  perspective: 1000px;
+}
+
+.parallax-element {
+  transform: translateZ(0);
+}
+
+/* ===== TEXT REVEAL ===== */
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* ===== WAVE ANIMATION ===== */
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+}
+
+/* ===== BOUNCE ANIMATIONS ===== */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ===== ENHANCE HOVER EFFECTS ===== */
+.photo-card {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.message-card {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.timeline-item div {
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ===== SCROLL-TRIGGERED ANIMATIONS ===== */
+.fade-in-on-scroll {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.scale-in-on-scroll {
+  animation: scaleIn 0.8s ease forwards;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== ENTRANCE ANIMATIONS ===== */
+.entrance-left {
+  animation: slideInLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.entrance-right {
+  animation: slideInRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.entrance-up {
+  animation: slideInUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* Stagger delays */
+.entrance-left {
+  animation-delay: 0s;
+}
+.entrance-left:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.entrance-left:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.entrance-right {
+  animation-delay: 0s;
+}
+.entrance-right:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.entrance-right:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+/* ===== SMOOTH TRANSITIONS ===== */
+* {
+  transition-property:
+    background-color, border-color, color, fill, stroke, opacity, box-shadow,
+    transform, filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Disable transitions during scrolling for performance */
+html.is-scrolling * {
+  transition: none !important;
+}
+
+/* ===== LOADING SKELETON ===== */
+@keyframes skeleton {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  animation: skeleton 2s infinite;
+  background: linear-gradient(90deg, #f0e6d2 25%, #f9f5ed 50%, #f0e6d2 75%);
+  background-size: 1000px 100%;
+}
